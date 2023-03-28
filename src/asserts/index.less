@@ -5,17 +5,46 @@
   background-color: var(--w-e-textarea-slight-bg-color);
   border-radius: 10px;
   display: flex;
-  padding: 10px ;
+  // padding: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
-.w-e-textarea-swiper-card-item {
-  width: 100%;
+.w-e-textarea-swiper-card-swiper-container {
+  // width: 300%;
+  height: 100%;
+  display: flex;
   position: absolute;
+  left: 0;
+  transition: .2s;
+}
+
+.w-e-textarea-swiper-card-swiper-button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+
+  &-prev,
+  &-next {
+    font-size: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    color: var(--w-e-textarea-slight-color);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.45);
+    }
+  }
 }
 
 .w-e-textarea-swiper-card-img {
-  width: 480px;
-  height: 430px;
-  
-  // object-fit: cover;
+  position: relative;
+  width: 100%;
+  // background-size: cover;
+  object-fit: cover;
 }

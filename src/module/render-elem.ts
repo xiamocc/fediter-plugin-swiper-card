@@ -7,6 +7,8 @@ import { h, VNode } from 'snabbdom'
 import { DomEditor, IDomEditor, SlateElement } from '@wangeditor/editor'
 import { SwiperCardElement } from './custom-types'
 import Base64 from '../utils/base'
+import { v4 as uuidv4 } from 'uuid'
+
 const DEFAULT_ICON_IMG_SRC =
   'data:image/png;base64,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'
 
@@ -17,6 +19,7 @@ function renderSwiperCard(elem: SlateElement, children: VNode[] | null, editor: 
   const base = new Base64()
   const imgsStr: string = imgs ? base.decode(imgs) : '[]'
   const imgsArr: Array<string> = JSON.parse(imgsStr)
+  const uuid = uuidv4()
   // 循环生成容器
   for (const img of imgsArr) {
     const image: VNode = h('img', {
@@ -31,9 +34,92 @@ function renderSwiperCard(elem: SlateElement, children: VNode[] | null, editor: 
       },
       image
     )
-    itemNode.push(item)
+    itemNode.push(image)
   }
-  // item容器部分
+  // 轮播容器部分
+  const swiperContainer = h(
+    'div',
+    {
+      props: {
+        className: 'w-e-textarea-swiper-card-swiper-container',
+      },
+      dataset: {
+        uuid,
+        index: '0',
+      },
+      style: {
+        width: `${100 * itemNode.length}%`,
+      },
+    },
+    itemNode
+  )
+  // 轮播按钮部分
+  const swiperButton = h(
+    'div',
+    {
+      props: {
+        className: 'w-e-textarea-swiper-card-swiper-button',
+      },
+
+      on: {
+        click: e => {
+          editor.emit('clickSwiperCard', e, elem)
+        },
+      },
+    },
+    [
+      h(
+        'div',
+        {
+          props: {
+            className: 'w-e-textarea-swiper-card-swiper-button-prev',
+          },
+          on: {
+            click: () => {
+              const alength: number = itemNode.length
+              const swiper: any = document.querySelector(
+                `.w-e-textarea-swiper-card-swiper-container[data-uuid="${uuid}"]`
+              )
+              let index = swiper.dataset.index
+              if (index < 1) {
+                index = alength - 1
+              } else {
+                index--
+              }
+              swiper.style.left = index * -100 + '%'
+              swiper.dataset.index = index
+            },
+          },
+        },
+        '<'
+      ),
+      h(
+        'div',
+        {
+          props: {
+            className: 'w-e-textarea-swiper-card-swiper-button-next',
+          },
+          on: {
+            click: () => {
+              const alength: number = itemNode.length
+              const swiper: any = document.querySelector(
+                `.w-e-textarea-swiper-card-swiper-container[data-uuid="${uuid}"]`
+              )
+              let index = swiper.dataset.index
+              if (index >= alength - 1) {
+                index = 0
+              } else {
+                index++
+              }
+              swiper.style.left = index * -100 + '%'
+              swiper.dataset.index = index
+            },
+          },
+        },
+        '>'
+      ),
+    ]
+  )
 
   // 主容器
   const vnode = h(
@@ -41,7 +127,7 @@ function renderSwiperCard(elem: SlateElement, children: VNode[] | null, editor: 
     {
       props: {
         contentEditable: false,
-        className: 'w-e-textarea-swiper-card-container swiper',
+        className: 'w-e-textarea-swiper-card-container',
       },
       dataset: {
         selected: selected ? 'true' : '', // 标记为 选中
@@ -50,7 +136,7 @@ function renderSwiperCard(elem: SlateElement, children: VNode[] | null, editor: 
         mousedown: event => event.preventDefault(),
       },
     },
-    itemNode
+    [swiperContainer, swiperButton]
   )
 
   return vnode
