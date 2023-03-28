@@ -40,7 +40,7 @@ const imgs: Array<string> = [
   'https://www.yulumi.cn/gl/uploads/allimg/201128/162003D24-2.jpg',
 ]
 const imgsStr: string = btoa(JSON.stringify(imgs))
-const linkCardHtml = `<div data-w-e-type="swiper-card" class="editer-swiper" data-w-e-is-void data-imgs="${imgsStr}"></div>`
+const linkCardHtml = `<div data-w-e-type="swiper-card" data-w-e-is-void data-imgs="${imgsStr}"></div>`
 
 // 创建编辑器
 const editor = createEditor({
@@ -63,6 +63,9 @@ const editor = createEditor({
   // ],
   html: `<p>hello&nbsp;world</p>${linkCardHtml}`,
   // html: `<p>hello&nbsp;<a href="http://news.baidu.com/" target="_blank">百度新闻</a>&nbsp;world</p>`,
+})
+editor.on('clickSwiperCard', (e: any) => {
+  console.log('clickSwiperCard', e)
 })
 const toolbar = createToolbar({
   editor,
