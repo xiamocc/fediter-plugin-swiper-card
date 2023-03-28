@@ -1,6 +1,6 @@
 {
-  "name": "@xiamocc/wangediter-plugin-swiper-card",
-  "version": "0.0.1",
+  "name": "@xiamocc/plugin-swiper-card",
+  "version": "0.0.2",
   "description": "wangEditor swiper-card plugin",
   "repository": {
     "type": "git",
