@@ -4,7 +4,7 @@
   "description": "wangEditor swiper-card plugin",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wangeditor-team/wangEditor-plugin-link-card.git"
+    "url": "git+https://github.com/xiamocc/wangediter-plugin-swiper-card.git"
   },
   "keywords": [
     "wangeditor",
@@ -14,9 +14,9 @@
   "author": "github.com/wangfupeng1988",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wangeditor-team/wangEditor-plugin-link-card/issues"
+    "url": "https://github.com/xiamocc/wangediter-plugin-swiper-card/issues"
   },
-  "homepage": "https://github.com/wangeditor-team/wangEditor-plugin-link-card#readme",
+  "homepage": "https://github.com/xiamocc/wangediter-plugin-swiper-card#readme",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/src/index.d.ts",
@@ -49,6 +49,7 @@
     "@babel/preset-env": "^7.13.12",
     "@testing-library/jest-dom": "^5.16.2",
     "@types/jest": "^27.4.0",
+    "@types/uuid": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
     "@wangeditor/editor": "^5.0.0",
@@ -91,6 +92,5 @@
   "peerDependencies": {
     "@wangeditor/editor": ">=5.0.0",
     "snabbdom": "^3.3.1"
-  },
-  "dependencies": {}
+  }
 }
