@@ -7,8 +7,8 @@ import { SlateElement } from '@wangeditor/editor'
 import { SwiperCardElement } from './custom-types'
 // 生成 html 的函数
 function swiperCardToHtml(elem: SlateElement, childrenHtml: string): string {
-  const { imgs = '' } = elem as SwiperCardElement
-  const html = `<div data-w-e-type="swiper-card" data-w-e-is-void data-imgs="${imgs}"></div>`
+  const { imgs = '', mode = 'list' } = elem as SwiperCardElement
+  const html = `<div data-w-e-type="swiper-card" data-w-e-is-void data-mode="${mode}" data-imgs="${imgs}"></div>`
   return html
 }
 

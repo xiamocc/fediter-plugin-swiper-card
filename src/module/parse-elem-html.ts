@@ -13,9 +13,11 @@ function parseHtml(
   editor: IDomEditor
 ): SlateElement {
   const imgs = elem.getAttribute('data-imgs') || ''
+  const mode = elem.getAttribute('data-mode') || ''
   return {
     type: 'swiper-card',
     imgs,
+    mode,
     children: [{ text: '' }], // void node 必须有一个空白 text
   } as SwiperCardElement
 }
