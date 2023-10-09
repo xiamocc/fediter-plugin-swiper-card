@@ -46,7 +46,7 @@ function renderSwiperCard(elem: SlateElement, children: VNode[] | null, editor: 
     width:
       ilength > 0 && mode !== 'list'
         ? `${100 * ilength}%`
-        : `calc(${450 * ilength}px + ${12 * ilength + 12}px)`,
+        : `calc(${400 * ilength}px + ${20 * ilength}px)`,
   }
   if (!ilength && mode !== 'list') {
     style['display'] = 'grid'

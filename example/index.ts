@@ -37,11 +37,18 @@ const editorConfig: Partial<IEditorConfig> = {
 }
 const imgs: Array<string> = [
   'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
-  'https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/01/0F/ChMkJ1bKwuqINV7jAAfKPRrmn_cAALGvAJv4_8AB8pV398.jpg',
-  'https://www.yulumi.cn/gl/uploads/allimg/201128/162003D24-2.jpg',
+  // 'https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/01/0F/ChMkJ1bKwuqINV7jAAfKPRrmn_cAALGvAJv4_8AB8pV398.jpg',
+  // 'https://www.yulumi.cn/gl/uploads/allimg/201128/162003D24-2.jpg',
   'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
-  'https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/01/0F/ChMkJ1bKwuqINV7jAAfKPRrmn_cAALGvAJv4_8AB8pV398.jpg',
-  'https://www.yulumi.cn/gl/uploads/allimg/201128/162003D24-2.jpg',
+  'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
+  'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
+  'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
+  'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
+  'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
+  'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
+  'https://www.pp3.cn/uploads/allimg/200710/14-200G00Z321.jpg',
+  // 'https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/01/0F/ChMkJ1bKwuqINV7jAAfKPRrmn_cAALGvAJv4_8AB8pV398.jpg',
+  // 'https://www.yulumi.cn/gl/uploads/allimg/201128/162003D24-2.jpg',
 ]
 const mode = 'list' // 'list' | 'swiper'
 const base = new Base64()
